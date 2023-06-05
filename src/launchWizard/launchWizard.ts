@@ -352,7 +352,7 @@ class LaunchWizard {
     })
 
     let tdmlActionSelect = ''
-    let tdmlActions = ['generate', 'append', 'execute']
+    let tdmlActions = ['execute']
     let tdmlAction =
       'tdmlConfig' in defaultValues ? defaultValues.tdmlConfig['action'] : null
     let tdmlName =
@@ -369,10 +369,7 @@ class LaunchWizard {
       tdmlAction !== null
         ? 'margin-top: 10px; visibility: visible;'
         : 'width: 0px; height: 0px; visibility: hidden'
-    let tdmlPathVisOrHiddenStyle =
-      tdmlAction === 'generate'
-        ? 'margin-top: 10px; visibility: visible;'
-        : 'width: 0px; height: 0px; visibility: hidden'
+    let tdmlPathVisOrHiddenStyle = 'visibility: hidden'
 
     tdmlActions.forEach((action) => {
       if (action === tdmlAction) {
@@ -500,7 +497,7 @@ class LaunchWizard {
 
       <div id="tdmlActionDiv" class="setting-div">
         <p>TDML Action:</p>
-        <p class="setting-description">TDML Action (generate | append | execute)</p>
+        <p class="setting-description">TDML Action execute)</p>
         <select onChange="updateTDMLAction()" class="file-input" style="width: 200px;" id="tdmlAction">
           ${tdmlActionSelect}
         </select>

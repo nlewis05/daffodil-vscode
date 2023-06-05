@@ -84,8 +84,6 @@
     "onCommand:extension.dfdl-debug.getDataName",
     "onCommand:extension.dfdl-debug.runEditorContents",
     "onCommand:extension.dfdl-debug.debugEditorContents",
-    "onCommand:extension.dfdl-debug.generateTDML",
-    "onCommand:extension.dfdl-debug.appendTDML",
     "onCommand:extension.dfdl-debug.executeTDML",
     "onCommand:extension.dfdl-debug.getTDMLName",
     "onCommand:extension.dfdl-debug.getTDMLDescription",
@@ -154,14 +152,6 @@
           "when": "resourceLangId == dfdl"
         },
         {
-          "command": "extension.dfdl-debug.generateTDML",
-          "when": "resourceLangId == dfdl"
-        },
-        {
-          "command": "extension.dfdl-debug.appendTDML",
-          "when": "resourceLangId == dfdl"
-        },
-        {
           "command": "extension.dfdl-debug.executeTDML",
           "when": "resourceLangId == dfdl"
         }
@@ -173,14 +163,6 @@
         },
         {
           "command": "extension.dfdl-debug.runEditorContents",
-          "when": "resourceLangId == dfdl"
-        },
-        {
-          "command": "extension.dfdl-debug.generateTDML",
-          "when": "resourceLangId == dfdl"
-        },
-        {
-          "command": "extension.dfdl-debug.appendTDML",
           "when": "resourceLangId == dfdl"
         },
         {
@@ -225,20 +207,8 @@
         "icon": "$(debug-alt)"
       },
       {
-        "command": "extension.dfdl-debug.generateTDML",
-        "title": "Generate TDML",
-        "category": "Daffodil Debug",
-        "enablement": "!inDebugMode"
-      },
-      {
-        "command": "extension.dfdl-debug.appendTDML",
-        "title": "Append TDML",
-        "category": "Daffodil Debug",
-        "enablement": "!inDebugMode"
-      },
-      {
         "command": "extension.dfdl-debug.executeTDML",
-        "title": "Execute TDML",
+        "title": "Execute TDML test case",
         "category": "Daffodil Debug",
         "enablement": "!inDebugMode"
       },
@@ -513,10 +483,8 @@
           },
           "tdmlAction": {
             "type": "string",
-            "description": "TDML Action to take (generate | append | execute)",
+            "description": "TDML Action to take (execute)",
             "enum": [
-              "generate",
-              "append",
               "execute"
             ],
             "default": "none"
@@ -533,7 +501,7 @@
           },
           "tdmlPath": {
             "type": "string",
-            "description": "Path to output for TDML file (req: tdmlAction=generate)",
+            "description": "Path to output for TDML file",
             "default": "${command:AskForTDMLPath}"
           },
           "infosetOutputType": {

@@ -98,6 +98,8 @@ lazy val core = project
       // scala-steward:on
       "co.fs2" %% "fs2-io" % "3.2.14",
       "com.monovore" %% "decline-effect" % "2.3.1",
+      "org.apache.daffodil" %% "daffodil-tdml-lib" % daffodilVer,
+      "org.typelevel" %% "log4cats-slf4j" % "2.5.0",
       "org.typelevel" %% "log4cats-slf4j" % "2.5.0",
       "org.scalameta" %% "munit" % "0.7.29" % Test
     ),

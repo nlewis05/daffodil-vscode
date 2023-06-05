@@ -100,14 +100,6 @@ function updateTDMLAction() {
       'width: 0px; height: 0px; visibility: hidden;'
   }
 
-  if (tdmlSelectedValue === 'generate') {
-    document.getElementById('tdmlPathLabel').style =
-      'margin-top: 10px; visibility: visible;'
-    document.getElementById('tdmlPath').style =
-      'margin-top: 10px; visibility: visible;'
-  } else {
-    document.getElementById('tdmlPathLabel').style =
-      'width: 0px; height: 0px; visibility: hidden;'
     document.getElementById('tdmlPath').style =
       'width: 0px; height: 0px; visibility: hidden;'
   }
